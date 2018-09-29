@@ -1,2 +1,1 @@
-# budgetlaw
-Budget your resources to succeed in your case
+This is our project
