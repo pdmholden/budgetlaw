@@ -2,10 +2,12 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
+import CardHeader from '@material-ui/core/CardHeader';
 import CardContent from '@material-ui/core/CardContent';
 import Typography from '@material-ui/core/Typography';
+import Avatar from '@material-ui/core/Avatar';
 
-const styles = {
+var styles = {
   card: {
     width: 344,
   },
@@ -21,6 +23,9 @@ const styles = {
   pos: {
     marginBottom: 12,
   },
+  avatar: {
+    backgroundColor: 'red',
+  },
 };
 
 function SimpleCard(props) {
@@ -28,6 +33,13 @@ function SimpleCard(props) {
 
   return (
     <Card className={classes.card}>
+      <CardHeader
+        avatar={
+          <Avatar aria-label="Recipe" className={classes.avatar}>
+            !
+          </Avatar>
+        }
+      />
       <CardContent>
         <Typography variant="headline" component="h2">
           {props.title}
