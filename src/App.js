@@ -1,6 +1,7 @@
 import Chat from "./components/chatbot";
 import Menu from "./components/menu";
 import HomeContent from "./components/homeContent";
+import FlowChart from "./components/FlowChart";
 import React, { Component } from 'react';
 import './App.css';
 
