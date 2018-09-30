@@ -1,5 +1,6 @@
 import React from 'react';
 import SimpleCard from './SimpleCard';
+import SimpleAlertCard from './SimpleAlertCard';
 import DownArrow from './DownArrow';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
@@ -105,7 +106,7 @@ function FlowChart(props) {
 
         { /* Row 9 */}
         <Grid item xs={6} align="center">
-          <SimpleCard
+          <SimpleAlertCard
             title="Complete a registration of divorce"
             body="The Notice of Joint Family Claim has five sections.All the issues between you and your spouse must have been resolved under an agreement or court order."
           />
@@ -131,7 +132,7 @@ function FlowChart(props) {
           />
         </Grid>
         <Grid item xs={6} align="center">
-          <SimpleCard
+          <SimpleAlertCard
             title="Swear or affirm affidavits"
             body="There are rules around the timing for swearing/affirming the Affidavit."
           />
