@@ -36,6 +36,7 @@ class Chat extends Component {
         <ChatBot
           floating={true}
           headerTitle="Claire your assistant"
+          recognitionEnable={true}
           steps={Steps}
         />
       </ThemeProvider>
