@@ -7,7 +7,7 @@ class DownArrow extends React.Component {
         width: 344,
       },
       line: {
-        marginLeft: 171,
+        // marginLeft: 171,
         width: 2,
         background: '#089CFF',
         height: 148,
@@ -17,7 +17,7 @@ class DownArrow extends React.Component {
     if (this.props.direction == "left") {
       styles.line.transform = "rotate(220deg)"
     } else if (this.props.direction == "right") {
-      styles.line.transform = "rotate(160deg)"
+      styles.line.transform = "rotate(140deg)"
     }
 
     return (
