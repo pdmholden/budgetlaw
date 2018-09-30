@@ -9,15 +9,17 @@ class DownArrow extends React.Component {
       line: {
         // marginLeft: 171,
         width: 2,
-        background: '#089CFF',
+        background: '#52B880',
         height: 148,
       },
     }
 
     if (this.props.direction == "left") {
-      styles.line.transform = "rotate(220deg)"
+      styles.line.transform = "rotate(220deg)";
+      styles.line.marginTop = -15;
     } else if (this.props.direction == "right") {
-      styles.line.transform = "rotate(140deg)"
+      styles.line.transform = "rotate(140deg)";
+      styles.line.marginTop = -15;
     }
 
     return (
