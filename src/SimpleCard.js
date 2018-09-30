@@ -32,28 +32,17 @@ function SimpleCard(props) {
   return (
     <Card className={classes.card}>
       <CardContent>
-        <Typography className={classes.title} color="textSecondary">
-          Word of the Day
-        </Typography>
         <Typography variant="headline" component="h2">
-          be
-          {bull}
-          nev
-          {bull}o{bull}
-          lent
-        </Typography>
-        <Typography className={classes.pos} color="textSecondary">
-          adjective
+          {props.title}
         </Typography>
         <Typography component="p">
-          well meaning and kindly.
-          <br />
-          {'"a benevolent smile"'}
+          {props.body}
         </Typography>
       </CardContent>
-      <CardActions>
+
+      {/* <CardActions>
         <Button size="small">Learn More</Button>
-      </CardActions>
+      </CardActions> */}
     </Card>
   );
 }
