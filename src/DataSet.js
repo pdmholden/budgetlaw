@@ -27,16 +27,11 @@ export const Steps = [
   {
     id: 'question-separated-time-yes',
     user: true,
-    trigger: 'divorce-process-bc',
-  },
-  {
-    id: 'divorce-process-bc',
-    message: 'Ok, Thanks here is some more information on the divorce process in BC https://www.supremecourtbc.ca/family-law/divorce-and-separation. But, before we go into that, I have a few more questions.',
     trigger: 'question-children',
   },
   {
     id: 'question-children',
-    message: 'Do you and your spouse have children together?',
+    message: 'Ok, before we go into that, I have a few more questions. Do you and your spouse have children together?',
     trigger: 'question-children-yes',
   },
   {
@@ -52,7 +47,19 @@ export const Steps = [
   {
     id: 'question-children-age-no',
     user: true,
-    trigger: 'question-financial-1',
+    trigger: 'question-custody',
+  },
+  {
+    id: 'question-custody',
+    message: 'Thanks. How likely are you and your spouse to agree on how to deal with your parenting and custody situation? (Likely, Unlikely)',
+    trigger: 'question-custody-options',
+  },
+  {
+    id: "question-custody-options",
+    options: [
+      { value: 'likely', label: 'Likely', trigger: 'question-financial-1' },
+      { value: 'unlikely', label: 'Unlikely', trigger: 'question-financial-1' },
+    ],
   },
   {
     id: 'question-financial-1',
@@ -62,17 +69,30 @@ export const Steps = [
   {
     id: 'question-financial-1-response',
     user: true,
-    trigger: 'question-financial-2',
+    // trigger: 'question-financial-2',
+    trigger: 'question-working-together',
+  },
+  // {
+  //   id: 'question-financial-2',
+  //   message: 'Will either you or your partner be better off financially than the other?',
+  //   trigger: 'question-financial-2-response',
+  // },
+  // {
+  //   id: 'question-financial-2-response',
+  //   user: true,
+  //   trigger: 'question-working-together',
+  // },
+  {
+    id: 'question-working-together',
+    message: 'How likely are you and your spouse to come to an agreement that takes your differences in financials into account? (Likely, Unlikely)',
+    trigger: 'question-working-together-options',
   },
   {
-    id: 'question-financial-2',
-    message: 'Will either you or your partner be better off financially than the other?',
-    trigger: 'question-financial-2-response',
-  },
-  {
-    id: 'question-financial-2-response',
-    user: true,
-    trigger: 'question-house',
+    id: "question-working-together-options",
+    options: [
+      { value: 'likely', label: 'Likely', trigger: 'question-house' },
+      { value: 'unlikely', label: 'Unlikely', trigger: 'question-house' },
+    ],
   },
   {
     id: 'question-house',
@@ -81,26 +101,6 @@ export const Steps = [
   },
   {
     id: 'question-house-own',
-    user: true,
-    trigger: 'question-property',
-  },
-  {
-    id: 'question-property',
-    message: 'Do you and your spouse share any of the following types of property: bank accounts, physical property, possessions (vehicles, art, etc), investments or a business',
-    trigger: 'question-property-yes',
-  },
-  {
-    id: 'question-property-yes',
-    user: true,
-    trigger: 'question-debt',
-  },
-  {
-    id: 'question-debt',
-    message: 'Do you and your spouse have any debt?',
-    trigger: 'question-debt-yes',
-  },
-  {
-    id: 'question-debt-yes',
     user: true,
     trigger: 'question-communication',
   },
@@ -112,22 +112,10 @@ export const Steps = [
   {
     id: "question-communication-options",
     options: [
-      { value: 'very good', label: 'Very good', trigger: 'question-working-together' },
-      { value: 'good', label: 'Good', trigger: 'question-working-together' },
-      { value: 'poor', label: 'Poor', trigger: 'question-working-together' },
-      { value: 'very poor', label: 'Very poor', trigger: 'question-working-together' },
-    ],
-  },
-  {
-    id: 'question-working-together',
-    message: 'How likely are you and your spouse agree on how to deal with your parenting, support, and property and debt issues? (Likely, Unlikely)',
-    trigger: 'question-working-together-options',
-  },
-  {
-    id: "question-working-together-options",
-    options: [
-      { value: 'likely', label: 'Likely', trigger: 'question-financial-limit' },
-      { value: 'unlikely', label: 'Unlikely', trigger: 'question-financial-limit' },
+      { value: 'very good', label: 'Very good', trigger: 'question-financial-limit' },
+      { value: 'good', label: 'Good', trigger: 'question-financial-limit' },
+      { value: 'poor', label: 'Poor', trigger: 'question-financial-limit' },
+      { value: 'very poor', label: 'Very poor', trigger: 'question-financial-limit' },
     ],
   },
   {
@@ -142,7 +130,7 @@ export const Steps = [
   },
   {
     id: 'end',
-    message: "---",
+    message: "Thanks for the info. Please click below for a breakdown of your situation.",
     end: true,
   },
   {

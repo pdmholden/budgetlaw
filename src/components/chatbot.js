@@ -16,6 +16,14 @@ const theme = {
 };
 
 class Chat extends Component {
+  componentDidMount() {
+    this.handleEnd = this.handleEnd.bind(this);
+  }
+
+  handleEnd({ steps, values }) {
+    alert(`Link to flowchart.`);
+  }
+
   state = {
     reload: false,
   }
@@ -34,6 +42,7 @@ class Chat extends Component {
     return (
       <ThemeProvider theme={theme}>
         <ChatBot
+          handleEnd={this.handleEnd}
           floating={true}
           headerTitle="Claire your assistant"
           recognitionEnable={true}
